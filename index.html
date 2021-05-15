@@ -5,47 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chat App</title>
-    <script
-      defer
-      src="https://chat-ak.herokuapp.com/socket.io/socket.io.js"
-    ></script>
-    <!-- <script defer src="script.js"></script> -->
-    <script>
+    <script src="https://chat-ak.herokuapp.com/socket.io/socket.io.js"></script>
+    <script defer src="script.js"></script>
+    <script type="text/javascript">
       let socket = io();
-
-      const messageContainer = document.getElementById("message-container");
-      const messageForm = document.getElementById("send-container");
-      const messageInput = document.getElementById("message-input");
-
-      const name = prompt("What is your name?");
-      appendMessage("You joined");
-      socket.emit("new-user", name);
-
-      socket.on("chat-message", (data) => {
-        appendMessage(`${data.name}: ${data.message}`);
-      });
-
-      socket.on("user-connected", (name) => {
-        appendMessage(`${name} connected`);
-      });
-
-      socket.on("user-disconnected", (name) => {
-        appendMessage(`${name} disconnected`);
-      });
-
-      messageForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const message = messageInput.value;
-        appendMessage(`You: ${message}`);
-        socket.emit("send-chat-message", message);
-        messageInput.value = "";
-      });
-
-      function appendMessage(message) {
-        const messageElement = document.createElement("div");
-        messageElement.innerText = message;
-        messageContainer.append(messageElement);
-      }
     </script>
     <style>
       body {
