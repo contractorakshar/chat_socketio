@@ -1,3 +1,4 @@
+let socket = io();
 let messageContainer = document.getElementById("message-container");
 let messageForm = document.getElementById("send-container");
 let messageInput = document.getElementById("message-input");
