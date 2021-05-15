@@ -11,6 +11,7 @@
     ></script>
     <!-- <script defer src="script.js"></script> -->
     <script>
+      const io = require("socket.io");
       let socket = io();
 
       const messageContainer = document.getElementById("message-container");
