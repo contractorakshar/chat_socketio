@@ -1,5 +1,7 @@
 // const io = require("socket.io")(process.env.PORT || 3000);
-const io = require("socket.io").listen(process.env.PORT || 5000);
+const io = require("socket.io").listen(
+  "ws://chat.ak.herokuapp.com/socket.io/?EIO=4&transport=websocket"
+);
 // io.listen(process.env.PORT);
 const users = {};
 

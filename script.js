@@ -1,4 +1,4 @@
-const socket = io.listen(process.env.PORT || 5000);
+const socket = io.listen(process.env.PORT);
 
 const messageContainer = document.getElementById("message-container");
 const messageForm = document.getElementById("send-container");
