@@ -1,4 +1,4 @@
-const socket = io("https://chat-ak.herokuapp.com/");
+const socket = io.listen(process.env.PORT);
 
 const messageContainer = document.getElementById("message-container");
 const messageForm = document.getElementById("send-container");
