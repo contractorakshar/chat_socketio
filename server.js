@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 const INDEX = "/index.html";
 
 const server = express()
-  .use(INDEX)
+  .use((req, res) => res.redirect(INDEX, { root: __dirname }))
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 const io = socketIO(server);
